@@ -1,0 +1,47 @@
+﻿<Window x:Class="AddressCode.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:AddressCode"
+		mc:Ignorable="d"
+		Title="MainWindow" Height="450" Width="800">
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Label>검색 범위</Label>
+            <CheckBox x:Name="CheckBox_Sido" IsChecked="true">시·도</CheckBox>
+            <CheckBox x:Name="CheckBox_SGG" IsChecked="true">시·군·구</CheckBox>
+            <CheckBox x:Name="CheckBox_EMD" IsChecked="true">읍·면·동</CheckBox>
+            <CheckBox x:Name="CheckBox_Ri" IsChecked="true">리</CheckBox>
+        </StackPanel>
+        <Grid Grid.Row="1"
+              Width="550"
+              VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0"
+                     x:Name="TextInput">
+            </TextBox>
+            <Button Grid.Column="1"
+                    x:Name="SearchButton"
+                    Click="SearchButton_Clicked">
+                Search
+            </Button>
+        </Grid>
+        <ScrollViewer Grid.Row="2"
+                      Width="550">
+            <TextBlock x:Name="TextOutput">
+                
+            </TextBlock>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
